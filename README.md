@@ -51,6 +51,9 @@ python3 src/tools/voc_xml_to_json.py
 data\images\*.png
 data\new_annos.json
 ```
+- cấu trúc:
+
+![](images/dataset.jpg)
 ## Make model
 - B1: make dla34 network
 ```
@@ -85,7 +88,16 @@ all:
 - B4:  Download pertained models for [detection]() or [pose estimation]() and move them to `$CenterNet_ROOT/models/`. More models can be found in [Model zoo](MODEL_ZOO.md).
 
 ## Train 
+-
 - experement
+- sau main.py sửa thành 
+```
+python3 main.py ctdet  ..............
+phía dưới tương tự
+```
+- hình ảnh:
+
+![](images/train.jpg)
 
 
 

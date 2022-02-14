@@ -88,7 +88,12 @@ all:
 - B4:  Download pertained models for [detection]() or [pose estimation]() and move them to `$CenterNet_ROOT/models/`. More models can be found in [Model zoo](MODEL_ZOO.md).
 
 ## Train 
--
+- Train với số class mình muốn
+```
+./src/lib/datasets/dataset/coco.py sửa dòng 14: num_classes = 1,   dòng 39:  self.class_name = ['__background__', 'Corner'],dòng 40: self._valid_ids = [1]
+
+
+```
 - experement
 - sau main.py sửa thành 
 ```
@@ -99,7 +104,11 @@ phía dưới tương tự
 
 ![](images/train.jpg)
 
-
+- chạy demo
+```
+./src/lib/utils/debugger.py sửa dòng 443: coco_class_name = ['Corner'], dòng 44: elif num_classes == 1 or dataset == 'coco':
+./src/lib/opts.py sửa dòng 338:       'ctdet': {'default_resolution': [512, 512], 'num_classes': 1, 
+```
 
 # Objects as Points
 Object detection, 3D detection, and pose estimation using center point detection:
